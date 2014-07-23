@@ -1,0 +1,11 @@
+!!!
+
+%html{ lang: 'ja' }
+  %head
+    %meta{ charset: 'UTF-8' }
+    %link{ rel: 'stylesheet', href: '/default.css' }
+    %title= 'Inspectagram | ' + @title
+  %body
+    #main
+      = yield
+

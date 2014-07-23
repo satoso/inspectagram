@@ -1,0 +1,30 @@
+.image
+  %img{ src: @link_medium, alt: @api_media.caption, title: @api_media.caption }
+
+%table
+  %tr
+    %td Filter
+    %td= @api_media.filter
+  %tr
+    %td Location
+    %td
+      %dl
+        %dt Name
+        %dd= @api_media.location.name
+        %dt Position
+        %dd 
+          - pos = [@api_media.location.latitude, @api_media.location.longitude]
+          %a{ target: '_blank', href: '//maps.google.co.jp/maps?q=' + pos.join(",") }= pos.join(", ")
+  %tr
+    %td Link to the JPEG
+    %td
+      %ul
+        %li
+          %a{ target: '_blank', href: @link_thumb  }= @link_thumb
+        %li
+          %a{ target: '_blank', href: @link_medium }= @link_medium
+        %li
+          %a{ target: '_blank', href: @link_large  }= @link_large
+
+
+
